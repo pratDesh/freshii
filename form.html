@@ -10,11 +10,36 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
   <link rel="stylesheet" href="neon.css" type="text/css">
   <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <link href="https://use.fontawesome.com/releases/v5.0.4/css/all.css" rel="stylesheet">
   <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
   <!-- Script: Make my navbar transparent when the document is scrolled to top -->
   <script src="js/navbar-ontop.js"></script>
   <!-- Script: Animated entrance -->
   <script src="js/animate-in.js"></script>
+   <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+
+  <script type="text/javascript">
+    
+        function toggleResetPswd(e){
+    e.preventDefault();
+    $('#logreg-forms .form-signin').toggle() // display:block or none
+    $('#logreg-forms .form-reset').toggle() // display:block or none
+}
+
+function toggleSignUp(e){
+    e.preventDefault();
+    $('#logreg-forms .form-signin').toggle(); // display:block or none
+    $('#logreg-forms .form-signup').toggle(); // display:block or none
+}
+
+$(()=>{
+    // Login Register Form
+    $('#logreg-forms #forgot_pswd').click(toggleResetPswd);
+    $('#logreg-forms #cancel_reset').click(toggleResetPswd);
+    $('#logreg-forms #btn-signup').click(toggleSignUp);
+    $('#logreg-forms #cancel_signup').click(toggleSignUp);
+})
+  </script>
 
 
   <style>
@@ -112,6 +137,10 @@
   color: #ffffff; 
 }
 
+/*  Login Forms*/
+
+
+
 
   </style>
 </head>
@@ -152,7 +181,7 @@
           </li>   
           <li class="nav-item mx-3">
             <a class="nav-link" href="#how" style="font-size: 15px;">
-              <b>HOW IT WORKS</b>
+              <b></b>
             </a>
           </li>
            <li class="nav-item mx-3">
@@ -166,6 +195,9 @@
     </div>
   </nav>
   <!-- Cover -->
+ 
+ <!--
+
   <div class="py-5 bg-light">
     <div class="container">
       <img class="img-fluid d-block" src="assets/restaurant/home_board3.jpg" alt="home_banner"> </div>
@@ -196,18 +228,99 @@
     	<p> 3 MEALS, 2 SNACKS, 1 BOX </p>
     </div>
   </div>
+
+-->
+  
+
+  
+
+
+  <div class="py-5 bg-light">
+    <div class="container">
+
+      <div id="logreg-forms">
+        <form class="form-signin">
+          <h1 class="h3 mb-3 font-weight-normal" style="text-align: center; color: #686b78;;"> Sign in</h1>
+            <div class="social-login">
+                <button class="btn facebook-btn social-btn" type="button"><span><i class="fab fa-facebook-f"></i> Sign in with Facebook</span> </button>
+                <button class="btn google-btn social-btn" type="button"><span><i class="fab fa-google-plus-g"></i> Sign in with Google+</span> </button>
+            </div>
+            <p style="text-align:center; color: #686b78;"> OR  </p>
+            <div class="input-group">
+              <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required="" autofocus="">
+            </div>
+
+            <div class="input-group">
+              <input type="password" id="inputPassword" class="form-control" placeholder="Password" required="">
+            </div>
+
+            <div class="input-group">
+              <button class="btn btn-md btn-rounded btn-block form-control submit" type="submit"><i class="fas fa-sign-in-alt"></i> Sign in</button>
+            </div>
+
+            <a href="#" id="forgot_pswd" style="color: #686b78;">Forgot password?</a>
+            <hr>
+            <!-- <p>Don't have an account!</p>  -->
+            <button class="btn btn-primary btn-block" type="button" id="btn-signup"><i class="fas fa-user-plus"></i> Sign up New Account</button>
+            </form>
+
+            <form action="#" class="form-reset">
+                <input type="email" id="resetEmail" class="form-control" placeholder="Email address" required="" autofocus="">
+                <button class="btn btn-primary btn-block" type="submit">Reset Password</button>
+                <a href="#" id="cancel_reset" style="color: #686b78;"><i class="fas fa-angle-left" ></i> Back</a>
+            </form>
+
+            <form action="#" class="form-signup">
+                <div class="social-login">
+                    <button class="btn facebook-btn social-btn" type="button"><span><i class="fab fa-facebook-f"></i> Sign up with Facebook</span> </button>
+                  </div>
+                  <div class="social-login">
+                    <button class="btn google-btn social-btn" type="button"><span><i class="fab fa-google-plus-g"></i> Sign up with Google+</span> </button>
+                </div>
+
+                <p style="text-align:center ;color: #686b78;">OR</p>
+
+                <input type="text" id="user-name" class="form-control" placeholder="Full name" required="" autofocus="">
+                <input type="email" id="user-email" class="form-control" placeholder="Email address" required autofocus="">
+                <input type="password" id="user-pass" class="form-control" placeholder="Password" required autofocus="">
+                <input type="password" id="user-repeatpass" class="form-control" placeholder="Confirm Password" required autofocus="">
+
+<div class="input-group">
+  <button class="btn btn-md btn-block submit" type="submit"><i class="fas fa-user-plus"></i> Sign Up</button>
+</div>
+
+                <a href="#" id="cancel_signup" style="color: #686b78;"><i class="fa fa-angle-left"></i> Back</a>
+            </form>
+            <br>
+
+    </div>
+
+
+
+    </div>
+  </div>
+
+
+
+
   		
+<!--
 
-
-  <div class="py-4 bg-info" id="how">
+  <div class="py-1 bg-light" id="how">
     <div class="container">
       <div class="row">
 	 
-        <div class="col-md-7 align-self-center"  style="margin: auto; width: 50%; padding: 10px; font-size: 20px; font-weight: bolder;">
+      <!--  <div class="col-md-7 align-self-center"  style="margin: auto; width: 50%; padding: 10px; font-size: 20px; font-weight: bolder;">
+          <h3>
+            <strong> Start your health journey now.</strong>
+          </h3>
+         
+
+
           <h3>
             <strong> Eat. Energize.</strong>
           </h3>
-          <p class="my-3" > <!--The Freshii Meal Box is your one-stop shop to a full day of healthy eating.-->
+          <p class="my-3" > <!--The Freshii Meal Box is your one-stop shop to a full day of healthy eating.
             Every <i>Freshii</i> Meal Box includes breakfast, lunch,
             dinner and two snacks.
             <br> Choose from a tailored 1, 3, 5 or 30 day program.</p>
@@ -221,16 +334,73 @@
             Get a Meal Box delivered to your Home or Office Daily<br><br>          
             <strong>Step 4 </strong> <br>
             Eat. Energize. with your Freshii Meal Box!
-          </p>
+          </p>  
 
+        </div> -
+         <div class="col-md-5 align-self-center">
+          <h3 style="color: #696663; font-size: 30px;  ">
+            <strong> A fresh start with <b><i>Freshii</i></b></strong>
+          </h3>
+    
         </div>
     </div>
   </div>
 </div>
 
 
+<div class="py-0 bg-light" >
+      <div class="container" style="text-align:left;">
 
-   <!-- -->
+      <div class="row">
+
+        <div class="col-md-1">
+        </div>
+        <div clas="col-md-8">
+          <form class="p-3 bg-light">
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="inputFirstName">Name</label>
+                <input type="text" class="form-control" id="inputFirstName" placeholder="First name">
+              </div>
+              <div class="form-group col-md-6">
+                <label for="inputLastName">.</label>
+                <input type="text" class="form-control" id="inputLastName" placeholder="Last name">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputAddress">Address 1</label>
+              <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+            </div>
+            <div class="form-group">
+              <label for="inputAddress2">Address 2</label>
+              <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, Flat, or floor">
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="inputCity">PIN</label>
+                <input type="text" class="form-control" id="inputCity">
+              </div>
+            </div>
+            <div class="form-group">
+                <label for="inputPhone">Phone</label>
+                <input type="text" class="form-control" id="inputPhone" >
+            </div>
+            <div class="form-group">
+                <label for="inputEmail">Email</label>
+                <input type="email" class="form-control" id="inputEmail" >
+            </div>
+
+            <br>
+            <button type="submit" class="btn btn-info">Subcribe</button>
+          </form>
+        </div>
+
+        </div>
+
+
+        </div>
+    </div>
+    -->
 
 
   <!-- Footer -->
@@ -315,116 +485,6 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   <!-- Script: Smooth scrolling between anchors in the same page -->
   <script src="js/smooth-scroll.js"></script>
-
-
-
-  <script>
-function autocomplete(inp, arr) {
-  /*the autocomplete function takes two arguments,
-  the text field element and an array of possible autocompleted values:*/
-  var currentFocus;
-  /*execute a function when someone writes in the text field:*/
-  inp.addEventListener("input", function(e) {
-      var a, b, i, val = this.value;
-      /*close any already open lists of autocompleted values*/
-      closeAllLists();
-      if (!val) { return false;}
-      currentFocus = -1;
-      /*create a DIV element that will contain the items (values):*/
-      a = document.createElement("DIV");
-      a.setAttribute("id", this.id + "autocomplete-list");
-      a.setAttribute("class", "autocomplete-items");
-      /*append the DIV element as a child of the autocomplete container:*/
-      this.parentNode.appendChild(a);
-      /*for each item in the array...*/
-      for (i = 0; i < arr.length; i++) {
-        /*check if the item starts with the same letters as the text field value:*/
-        if (arr[i].substr(0, val.length).toUpperCase() == val.toUpperCase()) {
-          /*create a DIV element for each matching element:*/
-          b = document.createElement("DIV");
-          /*make the matching letters bold:*/
-          b.innerHTML = "<strong>" + arr[i].substr(0, val.length) + "</strong>";
-          b.innerHTML += arr[i].substr(val.length);
-          /*insert a input field that will hold the current array item's value:*/
-          b.innerHTML += "<input type='hidden' value='" + arr[i] + "'>";
-          /*execute a function when someone clicks on the item value (DIV element):*/
-          b.addEventListener("click", function(e) {
-              /*insert the value for the autocomplete text field:*/
-              inp.value = this.getElementsByTagName("input")[0].value;
-              /*close the list of autocompleted values,
-              (or any other open lists of autocompleted values:*/
-              closeAllLists();
-          });
-          a.appendChild(b);
-        }
-      }
-  });
-  /*execute a function presses a key on the keyboard:*/
-  inp.addEventListener("keydown", function(e) {
-      var x = document.getElementById(this.id + "autocomplete-list");
-      if (x) x = x.getElementsByTagName("div");
-      if (e.keyCode == 40) {
-        /*If the arrow DOWN key is pressed,
-        increase the currentFocus variable:*/
-        currentFocus++;
-        /*and and make the current item more visible:*/
-        addActive(x);
-      } else if (e.keyCode == 38) { //up
-        /*If the arrow UP key is pressed,
-        decrease the currentFocus variable:*/
-        currentFocus--;
-        /*and and make the current item more visible:*/
-        addActive(x);
-      } else if (e.keyCode == 13) {
-        /*If the ENTER key is pressed, prevent the form from being submitted,*/
-        e.preventDefault();
-        if (currentFocus > -1) {
-          /*and simulate a click on the "active" item:*/
-          if (x) x[currentFocus].click();
-        }
-      }
-  });
-  function addActive(x) {
-    /*a function to classify an item as "active":*/
-    if (!x) return false;
-    /*start by removing the "active" class on all items:*/
-    removeActive(x);
-    if (currentFocus >= x.length) currentFocus = 0;
-    if (currentFocus < 0) currentFocus = (x.length - 1);
-    /*add class "autocomplete-active":*/
-    x[currentFocus].classList.add("autocomplete-active");
-  }
-  function removeActive(x) {
-    /*a function to remove the "active" class from all autocomplete items:*/
-    for (var i = 0; i < x.length; i++) {
-      x[i].classList.remove("autocomplete-active");
-    }
-  }
-  function closeAllLists(elmnt) {
-    /*close all autocomplete lists in the document,
-    except the one passed as an argument:*/
-    var x = document.getElementsByClassName("autocomplete-items");
-    for (var i = 0; i < x.length; i++) {
-      if (elmnt != x[i] && elmnt != inp) {
-        x[i].parentNode.removeChild(x[i]);
-      }
-    }
-  }
-  /*execute a function when someone clicks in the document:*/
-  document.addEventListener("click", function (e) {
-      closeAllLists(e.target);
-  });
-}
-
-/*An array containing all the country names in the world:*/
-var countries = ["Agra","Amritsar","Aurangabad","Belagavi","Bengaluru","Bhopal","Bhubaneshwar","Chandigarh","Coimbatore","Cuttack","Darjiling","Dehradun","Faridabad","Gandhinagar","Gurgaon","Guwahati","Gwalior","Hyderabad","Indore","Jaipur","Jalgaon","Jammu","Kalyan-Dombivali","Kanpur","Kolhapur","Kolkata","Mahad","Mumbai","Mysore","Nagar","Noida","Paithan","Pandharpur","Panvel","Pune","Raipur","Roorkee","Sangamner","Sangli","Solapur","Thiruvananthapuram","Udaipur","Vadodara","Vellore"];
-
-/*initiate the autocomplete function on the "myInput" element, and pass along the countries array as possible autocomplete values:*/
-autocomplete(document.getElementById("myInput"), countries);
-</script>
-
-
-
 
 
 </body>
